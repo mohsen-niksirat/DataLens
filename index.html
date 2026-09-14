@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0d1117">
+<meta name="description" content="DataLens — نمایش، تحلیل، نمودار و تبدیل داده. CSV، JSON، YAML، XML، SQL، Excel؛ همه در مرورگر و بدون آپلود.">
+<title>DataLens — Table · Chart · Stats · Convert</title>
+<link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/png" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+  <div class="hwrap">
+    <div class="logo">
+      <span class="logo-ic" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round">
+          <rect x="3.2" y="13" width="3.6" height="7.5" rx="1.1" fill="#fff" stroke="none" opacity=".85"/>
+          <rect x="8.6" y="9" width="3.6" height="11.5" rx="1.1" fill="#fff" stroke="none" opacity=".7"/>
+          <rect x="14" y="11" width="3.6" height="9.5" rx="1.1" fill="#fff" stroke="none" opacity=".55"/>
+          <path d="M3.5 9.5 9 5.5l4.5 3L20.5 4"/>
+        </svg>
+      </span>
+      <div>
+        <h1>DataLens</h1>
+        <p data-i18n="tagline">هر داده‌ای را پیست کن — جدول، نمودار، آمار و تبدیل. همه در مرورگر، بدون آپلود.</p>
+      </div>
+    </div>
+    <div class="hbtns">
+      <button class="chip icon" id="themeBtn" title="Theme" aria-label="Theme">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.4M12 19.6V22M4.9 4.9l1.7 1.7M17.4 17.4l1.7 1.7M2 12h2.4M19.6 12H22M4.9 19.1l1.7-1.7M17.4 6.6l1.7-1.7"/></svg>
+      </button>
+      <button class="chip" id="langBtn">English</button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- ============ IMPORT VIEW ============ -->
+  <section id="importView">
+    <p class="tagline" data-i18n="tagline">هر داده‌ای را پیست کن — جدول، نمودار، آمار و تبدیل. همه در مرورگر، بدون آپلود.</p>
+
+    <div class="card">
+      <div class="import-head">
+        <label for="pasteArea" data-i18n="pasteLabel">داده را اینجا پیست کن</label>
+        <span class="badge-det" id="detected" hidden></span>
+      </div>
+      <textarea id="pasteArea" spellcheck="false" data-i18n-ph="pastePh" placeholder="CSV، JSON، YAML، XML، SQL، TSV، Excel… را پیست کن یا فایل را روی صفحه رها کن"></textarea>
+
+      <div class="row">
+        <select id="formatSelect" aria-label="Format">
+          <option value="auto" data-i18n="auto">تشخیص خودکار</option>
+          <option value="json">JSON</option>
+          <option value="csv">CSV</option>
+          <option value="tsv">TSV</option>
+          <option value="yaml">YAML</option>
+          <option value="xml">XML</option>
+          <option value="sql">SQL</option>
+          <option value="jsonl">JSONL</option>
+          <option value="text">Text</option>
+        </select>
+        <button class="btn primary" id="parseBtn" data-i18n="parse">بپرداز</button>
+        <button class="btn ghost" id="sampleBtn" data-i18n="sample">نمونه</button>
+        <button class="btn ghost danger" id="clearBtn" data-i18n="clear">پاک</button>
+      </div>
+
+      <div class="drop" id="dropZone">
+        <b data-i18n="dropTitle">فایل را اینجا رها کن</b>
+        <span data-i18n="dropHint">یا برای انتخاب کلیک کن — CSV, TSV, JSON, XLSX, XML, YAML, SQL</span>
+        <input type="file" id="fileInput" accept=".csv,.tsv,.json,.jsonl,.txt,.xml,.yaml,.yml,.sql,.xlsx,.xls,.xlsm,.ods" hidden>
+      </div>
+
+      <p class="hint" style="margin-top:12px" data-i18n="supported">JSON · CSV · TSV · YAML · XML · SQL · JSONL · XLSX</p>
+    </div>
+  </section>
+
+  <!-- ============ WORKSPACE ============ -->
+  <section id="workspace" hidden>
+    <div class="ws-head">
+      <button class="btn ghost" id="backBtn" data-i18n="back">بازگشت</button>
+      <span class="ws-meta" id="stMeta">—</span>
+    </div>
+    <div class="tabs" id="sheetTabs" hidden></div>
+
+    <div class="viewswitch" id="viewSwitch">
+      <button data-view="table" class="active" data-i18n="table">جدول</button>
+      <button data-view="chart" data-i18n="chart">نمودار</button>
+      <button data-view="stats" data-i18n="stats">آمار</button>
+      <button data-view="tools" data-i18n="tools">ابزار</button>
+    </div>
+
+    <!-- TABLE -->
+    <div id="tableView">
+      <div class="toolbar">
+        <input type="search" id="searchInput" data-i18n-ph="search" placeholder="جستوجو در جدول…">
+        <button class="btn ghost" id="filterChip" hidden></button>
+        <label class="hint" style="display:flex;align-items:center;gap:6px">
+          <span data-i18n="rowsPerPage">در صفحه</span>
+          <select id="pageSize">
+            <option>25</option><option selected>50</option><option>100</option><option>250</option>
+          </select>
+        </label>
+      </div>
+      <div class="tablewrap" id="tableWrap"></div>
+      <div class="pager">
+        <button id="pagePrev" data-i18n="prev">قبلی</button>
+        <span id="pageInfo"></span>
+        <button id="pageNext" data-i18n="next">بعدی</button>
+      </div>
+      <div class="selbar" id="selectionBar" hidden>
+        <b id="selCount"></b>
+        <button class="btn ghost" id="selCopy" data-i18n="copyRows">کپی سطرها</button>
+        <button class="btn ghost" id="selExport" data-i18n="exportSelected">خروجی انتخاب‌شده</button>
+        <button class="btn ghost" id="selChart" data-i18n="chartSelected">نمودار انتخاب‌شده</button>
+        <button class="btn ghost" id="selClear" data-i18n="clearSel">لغو انتخاب</button>
+      </div>
+    </div>
+
+    <!-- CHART -->
+    <div id="chartView" hidden>
+      <div class="chart-grid">
+        <div class="fields">
+          <div class="field">
+            <label for="chartType" data-i18n="chartType">نوع نمودار</label>
+            <select id="chartType">
+              <option value="bar" data-i18n="bar">میله‌ای</option>
+              <option value="line" data-i18n="line">خطی</option>
+              <option value="area" data-i18n="area">سطحی</option>
+              <option value="pie" data-i18n="pie">دایره‌ای</option>
+              <option value="donut" data-i18n="donut">دونات</option>
+              <option value="histogram" data-i18n="histogram">هیستوگرام</option>
+              <option value="scatter" data-i18n="scatter">پراکندگی</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="chartLabel" data-i18n="labelCol">ستون برچسب</label>
+            <select id="chartLabel"></select>
+          </div>
+          <div class="field">
+            <label for="chartValue" data-i18n="valueCol">ستون مقدار</label>
+            <select id="chartValue"></select>
+          </div>
+          <div class="field" style="display:none">
+            <label for="chartValue2" data-i18n="valueCol2">ستون مقدار دوم (پراکندگی)</label>
+            <select id="chartValue2"></select>
+          </div>
+          <div class="field">
+            <label for="chartAgg" data-i18n="aggreg">تجمیع</label>
+            <select id="chartAgg">
+              <option value="sum" data-i18n="sum">جمع</option>
+              <option value="avg" data-i18n="avg">میانگین</option>
+              <option value="count" data-i18n="count">تعداد</option>
+              <option value="none" data-i18n="none">هیچ (هر سطر)</option>
+            </select>
+          </div>
+          <button class="btn primary" id="chartBtn" data-i18n="renderChart">رسم</button>
+          <div class="row" style="margin-top:0">
+            <button class="btn ghost" id="chartSvgDl" data-i18n="downloadSvg">دانلود SVG</button>
+            <button class="btn ghost" id="chartPngDl" data-i18n="downloadPng">دانلود PNG</button>
+          </div>
+          <p class="hint" id="chartMsg"></p>
+        </div>
+        <div class="chart-canvas" id="chartSvg"></div>
+      </div>
+    </div>
+
+    <!-- STATS -->
+    <div id="statsView" hidden>
+      <div class="stats-cards" id="statsCards"></div>
+      <div class="sec-title" data-i18n="substatsNote">آمار ستون‌ها</div>
+      <div class="tablewrap" id="statsTable"></div>
+    </div>
+
+    <!-- TOOLS -->
+    <div id="toolsView" hidden>
+      <div class="tools-grid">
+        <div class="card">
+          <div class="sec-title" data-i18n="exportAs">خروجی بگیر</div>
+          <label class="hint" style="display:flex;align-items:center;gap:8px;margin-bottom:12px">
+            <span data-i18n="delimiter">جداکننده خروجی</span>
+            <select id="delimSelect">
+              <option value="," data-i18n="comma">کاما</option>
+              <option value=";" data-i18n="semi">نیم‌ویرگول</option>
+              <option value="|" data-i18n="pipe">پایپ</option>
+              <option value="&#9;" data-i18n="tab">تب</option>
+            </select>
+          </label>
+          <div class="export-grid" id="exportGrid"></div>
+          <p class="note" id="toolsNote" style="margin-top:12px"></p>
+          <button class="btn ghost" id="copyOutBtn" data-i18n="copyOut">کپی خروجی</button>
+        </div>
+        <div class="card">
+          <div class="sec-title">Transform</div>
+          <div class="tool-list">
+            <div class="tool-row">
+              <div><b>Transpose</b><p>Rows ↔ Columns</p></div>
+              <button class="btn ghost" id="transposeBtn">↔</button>
+            </div>
+            <div class="tool-row">
+              <div><b>Deduplicate</b><p>Remove duplicate rows</p></div>
+              <button class="btn ghost" id="dedupeBtn"></button>
+            </div>
+            <div class="tool-row">
+              <div><b>Flatten JSON</b><p>Nested keys → dotted columns</p></div>
+              <button class="btn ghost" id="flattenBtn">⤓</button>
+            </div>
+          </div>
+          <p class="hint" style="margin-top:12px">Ctrl+Enter: parse/render · Ctrl+K: search · Esc: back</p>
+        </div>
+      </div>
+    </div>
+
+  </section>
+</main>
+
+<footer>
+  <span>DataLens — <span data-i18n="tagline">local-first data viewer</span></span>
+  <span class="stack">
+    <a href="https://github.com/mohsen-niksirat" target="_blank" rel="noopener">GitHub</a>
+    <span>·</span>
+    <span>Vanilla JS</span>
+  </span>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script src="js/parsers.js"></script>
+<script src="js/analyzer.js"></script>
+<script src="js/charts.js"></script>
+<script src="js/app.js"></script>
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => navigator.serviceWorker.register('sw.js').catch(() => {}));
+  }
+</script>
+</body>
+</html>

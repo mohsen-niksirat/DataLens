@@ -1,0 +1,20 @@
+# Editor
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs / temp
+*.log
+npm-debug.log*
+
+# Node (optional tooling)
+node_modules/
+package-lock.json
+
+# Local test artifacts
+_tests/
