@@ -45,7 +45,19 @@
 
   <!-- ============ IMPORT VIEW ============ -->
   <section id="importView">
-    <p class="tagline" data-i18n="tagline">هر داده‌ای را پیست کن — جدول، نمودار، آمار و تبدیل. همه در مرورگر، بدون آپلود.</p>
+    <p class="tagline" data-i18n="tagline">هر دادهای را پیست کن — جدول، نمودار، آمار و تبدیل. همه در مرورگر، بدون آپلود.</p>
+
+    <div class="restore-banner" id="restoreBanner" hidden>
+      <div class="rb-ic" aria-hidden="true">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/><path d="M12 7v5l3 2"/></svg>
+      </div>
+      <div class="rb-txt">
+        <b data-i18n="restoreTitle">جلسهٔ قبلی پیدا شد</b>
+        <span id="restoreMeta"></span>
+      </div>
+      <button class="btn primary" id="restoreBtn" data-i18n="restoreBtn">بازیابی</button>
+      <button class="btn ghost" id="restoreDismiss" data-i18n="dismiss">بی‌خیال</button>
+    </div>
 
     <div class="card">
       <div class="import-head">
@@ -68,6 +80,8 @@
         </select>
         <button class="btn primary" id="parseBtn" data-i18n="parse">بپرداز</button>
         <button class="btn ghost" id="sampleBtn" data-i18n="sample">نمونه</button>
+        <button class="btn ghost" id="openProjectBtn" data-i18n="openProject">باز کردن پروژه</button>
+        <input type="file" id="projectInput" accept=".json,.datalens" hidden>
         <button class="btn ghost danger" id="clearBtn" data-i18n="clear">پاک</button>
       </div>
 
@@ -86,6 +100,17 @@
     <div class="ws-head">
       <button class="btn ghost" id="backBtn" data-i18n="back">بازگشت</button>
       <span class="ws-meta" id="stMeta">—</span>
+      <span class="save-state" id="saveState" hidden></span>
+      <span class="spacer"></span>
+      <div class="hist-btns">
+        <button class="chip icon" id="undoBtn" disabled title="Ctrl+Z" aria-label="Undo">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 14 4 9l5-5"/><path d="M4 9h10a6 6 0 0 1 0 12h-1"/></svg>
+        </button>
+        <button class="chip icon" id="redoBtn" disabled title="Ctrl+Y" aria-label="Redo">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m15 14 5-5-5-5"/><path d="M20 9H10a6 6 0 0 0 0 12h1"/></svg>
+        </button>
+      </div>
+      <button class="btn ghost" id="projectSaveBtn" data-i18n="saveProject">ذخیره پروژه</button>
     </div>
     <div class="tabs" id="sheetTabs" hidden></div>
 
@@ -100,6 +125,11 @@
     <div id="tableView">
       <div class="toolbar">
         <input type="search" id="searchInput" data-i18n-ph="search" placeholder="جستوجو در جدول…">
+        <button class="btn ghost" id="filterToggle">
+          <span data-i18n="filters">فیلترها</span>
+          <span class="fcount" id="filterCount" hidden>0</span>
+        </button>
+        <button class="btn ghost" id="addRowBtn" data-i18n="addRow">افزودن سطر</button>
         <button class="btn ghost" id="filterChip" hidden></button>
         <label class="hint" style="display:flex;align-items:center;gap:6px">
           <span data-i18n="rowsPerPage">در صفحه</span>
@@ -107,6 +137,29 @@
             <option>25</option><option selected>50</option><option>100</option><option>250</option>
           </select>
         </label>
+      </div>
+      <div class="filters-panel" id="filtersPanel" hidden>
+        <div class="filter-list" id="filterList"></div>
+        <div class="filter-add">
+          <select id="filterCol" aria-label="Column"></select>
+          <select id="filterOp" aria-label="Operator">
+            <option value="contains" data-i18n="opContains">شامل</option>
+            <option value="notContains" data-i18n="opNotContains">شامل نباشد</option>
+            <option value="equals" data-i18n="opEquals">برابر</option>
+            <option value="notEquals" data-i18n="opNotEquals">نابرابر</option>
+            <option value="startsWith" data-i18n="opStarts">شروع با</option>
+            <option value="endsWith" data-i18n="opEnds">پایان با</option>
+            <option value="gt" data-i18n="opGt">بزرگتر از</option>
+            <option value="gte" data-i18n="opGte">بزرگ‌تر یا برابر</option>
+            <option value="lt" data-i18n="opLt">کوچک‌تر از</option>
+            <option value="lte" data-i18n="opLte">کوچک‌تر یا برابر</option>
+            <option value="regex" data-i18n="opRegex">الگو (Regex)</option>
+            <option value="empty" data-i18n="opEmpty">خالی</option>
+            <option value="notEmpty" data-i18n="opNotEmpty">خالی نباشد</option>
+          </select>
+          <input type="text" id="filterVal" data-i18n-ph="filterValPh" placeholder="مقدار...">
+          <button class="btn primary" id="filterAddBtn" data-i18n="addFilter">افزودن</button>
+        </div>
       </div>
       <div class="tablewrap" id="tableWrap"></div>
       <div class="pager">
@@ -119,6 +172,8 @@
         <button class="btn ghost" id="selCopy" data-i18n="copyRows">کپی سطرها</button>
         <button class="btn ghost" id="selExport" data-i18n="exportSelected">خروجی انتخاب‌شده</button>
         <button class="btn ghost" id="selChart" data-i18n="chartSelected">نمودار انتخاب‌شده</button>
+        <button class="btn ghost" id="selDuplicate" data-i18n="duplicateRows"></button>
+        <button class="btn ghost danger" id="selDeleteRows" data-i18n="deleteRows">حذف سطرهای انتخاب‌شده</button>
         <button class="btn ghost" id="selClear" data-i18n="clearSel">لغو انتخاب</button>
       </div>
     </div>
@@ -231,9 +286,12 @@
 
 <div class="toast" id="toast"></div>
 
+<div class="ctxmenu" id="ctxMenu" hidden></div>
+
 <script src="js/parsers.js"></script>
 <script src="js/analyzer.js"></script>
 <script src="js/charts.js"></script>
+<script src="js/store.js"></script>
 <script src="js/app.js"></script>
 <script>
   if ('serviceWorker' in navigator) {

@@ -101,7 +101,67 @@
       pickCols: 'ستون برچسب و مقدار را انتخاب کن',
       chartsReady: 'نمودار آماده است',
       theme: 'تغییر تم',
-      lang: 'English'
+      lang: 'English',
+      filters: 'فیلترها',
+      addFilter: 'افزودن',
+      filterValPh: 'مقدار...',
+      noFilters: 'فیلتری افزوده نشده — ستون، عملگر و مقدار را انتخاب کن',
+      clearFilters: 'پاککردن همه',
+      filterByValue: 'فیلتر با این مقدار',
+      opContains: 'شامل',
+      opNotContains: 'شامل نباشد',
+      opEquals: 'برابر',
+      opNotEquals: 'نابرابر',
+      opStarts: 'شروع با',
+      opEnds: 'پایان با',
+      opGt: 'بزرگ‌تر از',
+      opGte: 'بزرگتر یا برابر',
+      opLt: 'کوچک‌تر از',
+      opLte: 'کوچک‌تر یا برابر',
+      opRegex: 'الگو (Regex)',
+      opEmpty: 'خالی',
+      opNotEmpty: 'خالی نباشد',
+      undo: 'واگرد',
+      redo: 'ازنو',
+      undid: 'واگرد شد',
+      redid: 'ازنو شد',
+      nothingUndo: 'چیزی برای واگرد نیست',
+      nothingRedo: 'چیزی برای ازنو نیست',
+      saved: 'ذخیره شد',
+      savedEdit: 'ویرایش ذخیره شد',
+      restoreTitle: 'جلسهٔ قبلی پیدا شد',
+      restoreBtn: 'بازیابی',
+      dismiss: 'بی‌خیال',
+      restoreMeta: '{rows} سطر · {cols} ستون · {when}',
+      sessionSaved: 'جلسه به‌صورت خودکار ذخیره می‌شود',
+      saveProject: 'ذخیره پروژه',
+      openProject: 'باز کردن پروژه',
+      projectSaved: 'پروژه ذخیره شد',
+      projectOpened: 'پروژه باز شد',
+      projectInvalid: 'فایل پروژه نامعتبر است',
+      copyValue: 'کپی مقدار',
+      copyColValues: 'کپی ستون',
+      copyRowValues: 'کپی سطر (TSV)',
+      editCellMenu: 'ویرایش مقدار',
+      clearColFilter: 'حذف فیلتر ستون',
+      rowAdded: 'سطر افزوده شد',
+      openedFromSession: 'جلسه بازیابی شد',
+      minutesAgo: '{n} دقیقه پیش',
+      hoursAgo: '{n} ساعت پیش',
+      daysAgo: '{n} روز پیش',
+      justNow: 'همین حالا',
+      newColumn: 'ستون جدید',
+      renameColumn: 'تغییر نام ستون',
+      deleteColumn: 'حذف ستون',
+      duplicate: 'تکرار',
+      value: 'مقدار',
+deleteRow: 'حذف سطر',
+      deleteRows: 'حذف سطرهای انتخابشده',
+      rowsDeleted: '{n} سطر حذف شد',
+      noSelection: 'سطرها را انتخاب کن',
+      clearSession: 'پاککردن جلسهٔ ذخیرهشده',
+      addRow: 'افزودن سطر',
+      duplicateRows: 'تکرار سطرهای انتخابشده'
     },
     en: {
       tagline: 'Paste any data — table, chart, stats and conversion. All in your browser, no upload.',
@@ -199,7 +259,67 @@
       pickCols: 'Pick label and value columns',
       chartsReady: 'Chart ready',
       theme: 'Toggle theme',
-      lang: 'فارسی'
+      lang: 'فارسی',
+      filters: 'Filters',
+      addFilter: 'Add',
+      filterValPh: 'Value...',
+      noFilters: 'No filters yet — pick a column, operator and value',
+      clearFilters: 'Clear all',
+      filterByValue: 'Filter by this value',
+      opContains: 'contains',
+      opNotContains: 'does not contain',
+      opEquals: 'equals',
+      opNotEquals: 'not equals',
+      opStarts: 'starts with',
+      opEnds: 'ends with',
+      opGt: 'greater than',
+      opGte: 'greater or equal',
+      opLt: 'less than',
+      opLte: 'less or equal',
+      opRegex: 'pattern (regex)',
+      opEmpty: 'is empty',
+      opNotEmpty: 'is not empty',
+      undo: 'Undo',
+      redo: 'Redo',
+      undid: 'Undone',
+      redid: 'Redone',
+      nothingUndo: 'Nothing to undo',
+      nothingRedo: 'Nothing to redo',
+      saved: 'Saved',
+      savedEdit: 'Edit saved',
+      restoreTitle: 'Previous session found',
+      restoreBtn: 'Restore',
+      dismiss: 'Dismiss',
+      restoreMeta: '{rows} rows · {cols} cols · {when}',
+      sessionSaved: 'Session is auto-saved',
+      saveProject: 'Save project',
+      openProject: 'Open project',
+      projectSaved: 'Project saved',
+      projectOpened: 'Project opened',
+      projectInvalid: 'Invalid project file',
+      copyValue: 'Copy value',
+      copyColValues: 'Copy column',
+      copyRowValues: 'Copy row (TSV)',
+      editCellMenu: 'Edit value',
+      clearColFilter: 'Remove column filter',
+      rowAdded: 'Row added',
+      openedFromSession: 'Session restored',
+      minutesAgo: '{n} min ago',
+      hoursAgo: '{n} h ago',
+      daysAgo: '{n} d ago',
+      justNow: 'just now',
+      newColumn: 'New column',
+      renameColumn: 'Rename column',
+      deleteColumn: 'Delete column',
+      duplicate: 'Duplicate',
+      value: 'Value',
+      deleteRow: 'Delete row',
+      deleteRows: 'Delete selected rows',
+      rowsDeleted: '{n} rows deleted',
+      noSelection: 'Select some rows',
+      clearSession: 'Clear saved session',
+      addRow: 'Add row',
+      duplicateRows: 'Duplicate selected rows'
     }
   };
 
@@ -216,8 +336,92 @@
     selected: new Set(),
     rowFilter: null,
     view: 'table',
-    flat: false
+    flat: false,
+    colFilters: [],
+    name: '',
+    dirty: false
   };
+
+  const HISTORY_LIMIT = 40;
+  const history = {
+    stack: [],
+    index: -1,
+    snap() {
+      return state.data ? JSON.stringify(state.data) : null;
+    },
+    reset(save) {
+      this.stack = [this.snap()];
+      this.index = 0;
+      updateHistBtns();
+      if (save) scheduleSave();
+    },
+    push(save) {
+      const s = this.snap();
+      if (s === null) return;
+      if (this.stack[this.index] === s) return;
+      this.stack = this.stack.slice(0, this.index + 1);
+      this.stack.push(s);
+      if (this.stack.length > HISTORY_LIMIT) this.stack.shift();
+      this.index = this.stack.length - 1;
+      updateHistBtns();
+      markDirty();
+      scheduleSave();
+    },
+    apply(i) {
+      state.data = JSON.parse(this.stack[i]);
+      state.selected = new Set();
+      state.rowFilter = null;
+      if (state.page > 1 && !state.data) state.page = 1;
+      buildSheetTabs();
+      buildChartControls();
+      buildFilterColumns();
+      render();
+      updateMeta();
+      updateHistBtns();
+      markDirty();
+      scheduleSave();
+    },
+    undo() {
+      if (this.index <= 0) return false;
+      this.index--;
+      this.apply(this.index);
+      return true;
+    },
+    redo() {
+      if (this.index >= this.stack.length - 1) return false;
+      this.index++;
+      this.apply(this.index);
+      return true;
+    }
+  };
+
+  function updateHistBtns() {
+    const u = $('#undoBtn');
+    const r = $('#redoBtn');
+    if (u) u.disabled = history.index <= 0;
+    if (r) r.disabled = history.index >= history.stack.length - 1;
+  }
+
+  function markDirty() {
+    state.dirty = true;
+    const el = $('#saveState');
+    if (el) {
+      el.hidden = false;
+      el.textContent = '●';
+      el.title = t('sessionSaved');
+    }
+  }
+
+  function updateMeta() {
+    const s = sheet();
+    const el = $('#stMeta');
+    if (!el) return;
+    const filtered = viewRows().length;
+    const total = s.rows.length;
+    let txt = s.columns.length + ' ' + t('colsShort') + ' · ' + total + ' ' + t('rowsShort');
+    if (filtered !== total) txt += ' → ' + filtered;
+    el.textContent = txt;
+  }
 
   function applyI18n() {
     document.documentElement.lang = lang;
@@ -283,6 +487,9 @@
     let idx = s.rows.map((_, i) => i);
     if (state.rowFilter) idx = idx.filter((i) => state.rowFilter.has(i));
     if (q) idx = idx.filter((i) => s.rows[i].some((c) => String(c).toLowerCase().includes(q)));
+    if (state.colFilters.length) {
+      idx = idx.filter((i) => state.colFilters.every((f) => matchFilter(s.rows[i][f.col], f)));
+    }
     if (state.sort.col >= 0) {
       const { col, dir } = state.sort;
       idx.sort((a, b) => {
@@ -297,6 +504,50 @@
       });
     }
     return idx;
+  }
+
+  function matchFilter(cell, f) {
+    const raw = cell === undefined || cell === null ? '' : String(cell);
+    const val = raw.trim();
+    const needle = String(f.value === undefined ? '' : f.value);
+    const lower = val.toLowerCase();
+    const nlower = needle.toLowerCase();
+    const num = A.isNum(val) ? Number(val.replace(/,/g, '')) : NaN;
+    const nnum = A.isNum(needle) ? Number(needle.replace(/,/g, '')) : NaN;
+    switch (f.op) {
+      case 'contains':
+        return lower.includes(nlower);
+      case 'notContains':
+        return !lower.includes(nlower);
+      case 'equals':
+        return A.isNum(needle) && A.isNum(val) ? num === nnum : lower === nlower;
+      case 'notEquals':
+        return A.isNum(needle) && A.isNum(val) ? num !== nnum : lower !== nlower;
+      case 'startsWith':
+        return lower.startsWith(nlower);
+      case 'endsWith':
+        return lower.endsWith(nlower);
+      case 'gt':
+        return !isNaN(num) && !isNaN(nnum) && num > nnum;
+      case 'gte':
+        return !isNaN(num) && !isNaN(nnum) && num >= nnum;
+      case 'lt':
+        return !isNaN(num) && !isNaN(nnum) && num < nnum;
+      case 'lte':
+        return !isNaN(num) && !isNaN(nnum) && num <= nnum;
+      case 'regex':
+        try {
+          return new RegExp(needle, 'i').test(val);
+        } catch (e) {
+          return false;
+        }
+      case 'empty':
+        return val === '';
+      case 'notEmpty':
+        return val !== '';
+      default:
+        return true;
+    }
   }
 
   function records() {
@@ -320,7 +571,7 @@
   }
 
   /* ---------- import ---------- */
-  function loadData(parsed, keepSort) {
+  function loadData(parsed, keepSort, name) {
     state.data = parsed;
     state.sheet = 0;
     state.filter = '';
@@ -329,8 +580,12 @@
     state.selected = new Set();
     state.rowFilter = null;
     state.flat = false;
+    state.colFilters = [];
+    state.name = name || parsed.name || '';
     if (!keepSort) $('#searchInput').value = '';
+    history.reset(false);
     enterWorkspace();
+    scheduleSave();
   }
 
   function enterWorkspace() {
@@ -338,8 +593,10 @@
     $('#workspace').hidden = false;
     buildSheetTabs();
     buildChartControls();
+    buildFilterColumns();
+    renderFilters();
     render();
-    $('#stMeta').textContent = sheet().columns.length + ' ' + t('colsShort') + ' · ' + sheet().rows.length + ' ' + t('rowsShort');
+    updateMeta();
   }
 
   function exitWorkspace() {
@@ -349,6 +606,7 @@
     $('#pasteArea').value = '';
     $('#detected').hidden = true;
     setDetected('');
+    loadSessionBanner();
   }
 
   function parsePaste() {
@@ -358,7 +616,7 @@
     try {
       const parsed = DL.Parsers.parse(text, forced);
       parsed.sourceSize = text.length;
-      loadData(parsed);
+      loadData(parsed, false, '');
       toast(t('detected') + ': ' + parsed.type);
     } catch (e) {
       toast(t('error') + ': ' + e.message, 'err');
@@ -372,7 +630,7 @@
     try {
       const parsed = await DL.Parsers.parseFile(file);
       parsed.sourceSize = file.size;
-      loadData(parsed);
+      loadData(parsed, false, file.name);
       toast(file.name + ' — ' + t('detected') + ': ' + parsed.type);
     } catch (e) {
       toast(t('error') + ': ' + e.message, 'err');
@@ -399,6 +657,206 @@
     }
   }
 
+  /* ---------- persistence ---------- */
+  let saveTimer = null;
+  function scheduleSave() {
+    if (!state.data) return;
+    clearTimeout(saveTimer);
+    saveTimer = setTimeout(saveSession, 700);
+  }
+
+  async function saveSession() {
+    if (!state.data) return;
+    try {
+      const payload = {
+        v: 1,
+        ts: Date.now(),
+        name: state.name || '',
+        sheet: state.sheet,
+        data: state.data
+      };
+      const ok = await DL.Store.saveSession(payload);
+      const el = $('#saveState');
+      if (el && ok) {
+        el.hidden = false;
+        el.textContent = '✓ ' + t('saved');
+        el.title = t('sessionSaved');
+      }
+    } catch (e) {}
+  }
+
+  function timeAgo(ts) {
+    const d = Date.now() - ts;
+    const m = Math.floor(d / 60000);
+    if (m < 1) return t('justNow');
+    if (m < 60) return t('minutesAgo').replace('{n}', m);
+    const h = Math.floor(m / 60);
+    if (h < 24) return t('hoursAgo').replace('{n}', h);
+    return t('daysAgo').replace('{n}', Math.floor(h / 24));
+  }
+
+  async function loadSessionBanner() {
+    const banner = $('#restoreBanner');
+    if (!banner) return;
+    const s = await DL.Store.loadSession();
+    if (!s || !s.data || !s.data.sheets || !s.data.sheets.length) {
+      banner.hidden = true;
+      saveSessionCache = null;
+      return;
+    }
+    saveSessionCache = s;
+    const sh = s.data.sheets[0];
+    $('#restoreMeta').textContent = t('restoreMeta')
+      .replace('{rows}', formatNum(sh.rows.length))
+      .replace('{cols}', sh.columns.length)
+      .replace('{when}', timeAgo(s.ts));
+    banner.hidden = false;
+  }
+
+  function formatNum(n) {
+    try {
+      return new Intl.NumberFormat(lang === 'fa' ? 'fa-IR' : 'en-US').format(n);
+    } catch (e) {
+      return String(n);
+    }
+  }
+
+  let saveSessionCache = null;
+
+  function restoreSession() {
+    if (!saveSessionCache) return;
+    state.data = saveSessionCache.data;
+    state.sheet = saveSessionCache.sheet || 0;
+    state.name = saveSessionCache.name || '';
+    if (state.sheet >= state.data.sheets.length) state.sheet = 0;
+    state.filter = '';
+    state.sort = { col: -1, dir: 'asc' };
+    state.page = 1;
+    state.selected = new Set();
+    state.rowFilter = null;
+    state.colFilters = [];
+    history.reset(false);
+    enterWorkspace();
+    toast(t('openedFromSession'));
+  }
+
+  async function dismissSession() {
+    saveSessionCache = null;
+    $('#restoreBanner').hidden = true;
+    await DL.Store.clearSession();
+  }
+
+  /* ---------- project save / open ---------- */
+  function saveProject() {
+    if (!state.data) return;
+    const payload = {
+      __datalens: true,
+      v: 1,
+      name: state.name || 'datalens-project',
+      ts: Date.now(),
+      sheet: state.sheet,
+      colFilters: state.colFilters,
+      sort: state.sort,
+      data: state.data
+    };
+    const base = (state.name || sheet().name || 'project').replace(/\.[^.]+$/, '').replace(/[^\w\-]+/g, '_') || 'project';
+    download(base + '.datalens.json', JSON.stringify(payload, null, 2), 'application/json');
+    toast(t('projectSaved'));
+  }
+
+  function openProjectFile(file) {
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = () => {
+      try {
+        const obj = JSON.parse(reader.result);
+        if (!obj || !obj.data || !obj.data.sheets) throw new Error('bad');
+        state.data = obj.data;
+        state.sheet = obj.sheet || 0;
+        state.name = obj.name || file.name;
+        state.colFilters = Array.isArray(obj.colFilters) ? obj.colFilters : [];
+        state.sort = obj.sort && obj.sort.col >= 0 ? obj.sort : { col: -1, dir: 'asc' };
+        state.filter = '';
+        state.page = 1;
+        state.selected = new Set();
+        state.rowFilter = null;
+        if (state.sheet >= state.data.sheets.length) state.sheet = 0;
+        history.reset(false);
+        enterWorkspace();
+        toast(t('projectOpened'));
+      } catch (e) {
+        toast(t('projectInvalid'), 'err');
+      }
+    };
+    reader.readAsText(file);
+  }
+
+  /* ---------- column filters ---------- */
+  function buildFilterColumns() {
+    const s = sheet();
+    const sel = $('#filterCol');
+    if (!sel) return;
+    const prev = sel.value;
+    sel.innerHTML = s.columns
+      .map((c, i) => '<option value="' + i + '">' + escapeHtml(c || 'col' + (i + 1)) + '</option>')
+      .join('');
+    if (prev && sel.querySelector('option[value="' + prev + '"]')) sel.value = prev;
+  }
+
+  function renderFilters() {
+    const list = $('#filterList');
+    if (!list) return;
+    const s = sheet();
+    if (!state.colFilters.length) {
+      list.innerHTML = '<p class="hint">' + t('noFilters') + '</p>';
+    } else {
+      list.innerHTML = state.colFilters
+        .map((f, i) => {
+          const needsVal = f.op !== 'empty' && f.op !== 'notEmpty';
+          return (
+            '<div class="filter-row" data-i="' + i + '">' +
+            '<b>' + escapeHtml(s.columns[f.col] || 'col' + (f.col + 1)) + '</b>' +
+            '<span class="op">' + filterOpLabel(f.op) + '</span>' +
+            (needsVal ? '<span class="val">' + escapeHtml(f.value) + '</span>' : '') +
+            '<span class="grow"></span>' +
+            '<button class="x" data-rm="' + i + '" title="' + t('clearColFilter') + '"></button>' +
+            '</div>'
+          );
+        })
+        .join('');
+    }
+    const count = $('#filterCount');
+    if (count) {
+      count.hidden = state.colFilters.length === 0;
+      count.textContent = state.colFilters.length;
+    }
+    list.querySelectorAll('button[data-rm]').forEach((b) => {
+      b.onclick = () => {
+        state.colFilters.splice(Number(b.dataset.rm), 1);
+        state.page = 1;
+        renderFilters();
+        renderTable();
+        updateMeta();
+        scheduleSave();
+      };
+    });
+    const panel = $('#filtersPanel');
+    if (panel && state.colFilters.length && panel.hidden) panel.hidden = false;
+  }
+
+  function filterOpLabel(op) {
+    return t('op' + op.charAt(0).toUpperCase() + op.slice(1));
+  }
+
+  function addColumnFilter(col, op, value) {
+    state.colFilters.push({ col: Number(col), op, value: value === undefined ? '' : value });
+    state.page = 1;
+    renderFilters();
+    renderTable();
+    updateMeta();
+    scheduleSave();
+  }
+
   /* ---------- tabs ---------- */
   function buildSheetTabs() {
     const wrap = $('#sheetTabs');
@@ -417,10 +875,13 @@
         state.selected = new Set();
         state.page = 1;
         state.sort = { col: -1, dir: 'asc' };
+        state.colFilters = [];
         buildSheetTabs();
         buildChartControls();
+        buildFilterColumns();
+        renderFilters();
         render();
-        $('#stMeta').textContent = s.columns.length + ' ' + t('colsShort') + ' · ' + s.rows.length + ' ' + t('rowsShort');
+        updateMeta();
       };
       wrap.appendChild(b);
     });
@@ -438,6 +899,7 @@
     if (state.view === 'stats') renderStats();
     if (state.view === 'tools') renderTools();
     renderSelection();
+    updateMeta();
   }
 
   function cellClass(v) {
@@ -516,6 +978,10 @@
       .querySelectorAll('td[data-row]')
       .forEach((td) => {
         td.ondblclick = () => startEdit(td);
+        td.oncontextmenu = (e) => {
+          e.preventDefault();
+          openCellMenu(td, e.clientX, e.clientY);
+        };
       });
   }
 
@@ -532,10 +998,19 @@
     td.appendChild(inp);
     inp.focus();
     inp.select();
+    let done = false;
     const commit = (save) => {
+      if (done) return;
+      done = true;
+      inp.onblur = null;
+      inp.onkeydown = null;
       if (save) {
-        s.rows[ri][ci] = inp.value;
-        toast(t('copied') + ' ✔');
+        const old = s.rows[ri][ci] === undefined ? '' : s.rows[ri][ci];
+        if (String(old) !== inp.value) {
+          s.rows[ri][ci] = inp.value;
+          history.push();
+          toast(t('savedEdit') + ' ✔');
+        }
       }
       renderTable();
     };
@@ -544,6 +1019,95 @@
       if (e.key === 'Escape') commit(false);
     };
     inp.onblur = () => commit(true);
+  }
+
+  function closeCtx() {
+    const el = $('#ctxMenu');
+    if (el) el.hidden = true;
+  }
+
+  function openCellMenu(td, x, y) {
+    const s = sheet();
+    const ri = Number(td.dataset.row);
+    const ci = Number(td.dataset.col);
+    const val = s.rows[ri][ci] === undefined ? '' : s.rows[ri][ci];
+    const menu = $('#ctxMenu');
+    const colName = s.columns[ci] || 'col' + (ci + 1);
+    const items = [
+      { lbl: colName + ' · ' + (ri + 1) },
+      { act: 'copyVal', label: t('copyValue') },
+      { act: 'copyRow', label: t('copyRowValues') },
+      { act: 'copyCol', label: t('copyColValues') },
+      { sep: true },
+      { act: 'filter', label: t('filterByValue') },
+      { act: 'edit', label: t('editCellMenu') },
+      { sep: true },
+      { act: 'deleteRow', label: t('deleteRow') }
+    ];
+    menu.innerHTML = items
+      .map((it) => {
+        if (it.sep) return '<div class="sep"></div>';
+        if (!it.act) return '<div class="lbl">' + escapeHtml(it.lbl) + '</div>';
+        return '<button data-act="' + it.act + '">' + escapeHtml(it.label) + '</button>';
+      })
+      .join('');
+    menu.hidden = false;
+    const mw = menu.offsetWidth;
+    const mh = menu.offsetHeight;
+    menu.style.left = Math.min(x, window.innerWidth - mw - 8) + 'px';
+    menu.style.top = Math.min(y, window.innerHeight - mh - 8) + 'px';
+    menu.querySelectorAll('button[data-act]').forEach((b) => {
+      b.onclick = () => {
+        const act = b.dataset.act;
+        closeCtx();
+        if (act === 'copyVal') copyText(String(val)).then(() => toast(t('copiedCell')));
+        else if (act === 'copyRow') copyText(s.rows[ri].join('\t')).then(() => toast(t('copiedCell')));
+        else if (act === 'copyCol') copyText(s.rows.map((r) => (r[ci] === undefined ? '' : r[ci])).join('\n')).then(() => toast(t('copiedCell')));
+        else if (act === 'filter') addColumnFilter(ci, 'contains', String(val));
+        else if (act === 'edit') startEdit(td);
+        else if (act === 'deleteRow') deleteRows([ri]);
+      };
+    });
+  }
+
+  function deleteRows(list) {
+    const s = sheet();
+    const del = new Set(list);
+    s.rows = s.rows.filter((_, i) => !del.has(i));
+    state.selected = new Set();
+    state.rowFilter = null;
+    history.push();
+    state.page = 1;
+    renderFilters();
+    renderTable();
+    renderSelection();
+    updateMeta();
+  }
+
+  function addRow() {
+    const s = sheet();
+    s.rows.push(new Array(s.columns.length).fill(''));
+    history.push();
+    state.page = Math.max(1, Math.ceil(viewRows().length / state.pageSize));
+    renderTable();
+    updateMeta();
+    toast(t('rowAdded'));
+  }
+
+  function duplicateRows(list) {
+    const s = sheet();
+    const picks = list.slice().sort((a, b) => a - b);
+    if (!picks.length) return toast(t('noSelection'), 'warn');
+    const clones = picks.map((i) => s.rows[i].slice());
+    s.rows = s.rows.concat(clones);
+    state.selected = new Set();
+    state.rowFilter = null;
+    history.push();
+    state.page = Math.max(1, Math.ceil(viewRows().length / state.pageSize));
+    renderTable();
+    renderSelection();
+    updateMeta();
+    toast(t('rowAdded'));
   }
 
   function renderSelection() {
@@ -762,6 +1326,7 @@
       newRows.push([String(cols[c] === undefined ? 'col' + (c + 1) : cols[c])].concat(rows.map((r) => (r[c] === undefined ? '' : r[c]))));
     }
     state.data = { type: state.data.type, sheets: [{ name: 'transposed', columns: newCols, rows: newRows }], sourceSize: state.data.sourceSize };
+    history.push();
     resetView();
     toast(t('transposedNote'));
   }
@@ -780,6 +1345,7 @@
     const removed = s.rows.length - rows.length;
     if (!removed) return toast(t('noDupe'));
     s.rows = rows;
+    history.push();
     resetView();
     toast(t('deduped') + ' · −' + removed);
   }
@@ -811,6 +1377,7 @@
       sheets: [{ name: (s.name || 'data') + '_flat', columns: cols, rows: rows }],
       sourceSize: state.data.sourceSize
     };
+    history.push();
     resetView();
     toast(t('flattened'));
   }
@@ -825,8 +1392,11 @@
     $('#searchInput').value = '';
     buildSheetTabs();
     buildChartControls();
+    buildFilterColumns();
+    renderFilters();
     render();
-    $('#stMeta').textContent = sheet().columns.length + ' ' + t('colsShort') + ' · ' + sheet().rows.length + ' ' + t('rowsShort');
+    updateMeta();
+    scheduleSave();
   }
 
   function copyOutput() {
@@ -891,6 +1461,8 @@
       if (state.data) {
         buildSheetTabs();
         buildChartControls();
+        buildFilterColumns();
+        renderFilters();
         render();
       }
     };
@@ -1010,18 +1582,96 @@
     $('#flattenBtn').onclick = flattenJSON;
     $('#copyOutBtn').onclick = copyOutput;
 
+    /* --- history --- */
+    $('#undoBtn').onclick = () => {
+      if (history.undo()) toast(t('undid'));
+      else toast(t('nothingUndo'), 'warn');
+    };
+    $('#redoBtn').onclick = () => {
+      if (history.redo()) toast(t('redid'));
+      else toast(t('nothingRedo'), 'warn');
+    };
+
+    /* --- project --- */
+    $('#projectSaveBtn').onclick = saveProject;
+    $('#openProjectBtn').onclick = () => $('#projectInput').click();
+    $('#projectInput').onchange = (e) => {
+      openProjectFile(e.target.files[0]);
+      e.target.value = '';
+    };
+
+    /* --- restore banner --- */
+    $('#restoreBtn').onclick = restoreSession;
+    $('#restoreDismiss').onclick = dismissSession;
+
+    /* --- column filters --- */
+    $('#filterToggle').onclick = () => {
+      const p = $('#filtersPanel');
+      p.hidden = !p.hidden;
+      if (!p.hidden) buildFilterColumns();
+    };
+    $('#filterAddBtn').onclick = () => {
+      const col = $('#filterCol').value;
+      const op = $('#filterOp').value;
+      const val = $('#filterVal').value;
+      if (col === '') return;
+      addColumnFilter(col, op, val);
+      $('#filterVal').value = '';
+    };
+    $('#filterVal').addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') $('#filterAddBtn').click();
+    });
+
+    /* --- context menu global dismiss --- */
+    document.addEventListener('click', (e) => {
+      if (!$('#ctxMenu').hidden && !e.target.closest('#ctxMenu')) closeCtx();
+    });
+    document.addEventListener('scroll', closeCtx, true);
+    window.addEventListener('resize', closeCtx);
+
+    /* --- selection delete --- */
+    $('#addRowBtn').onclick = addRow;
+    const selDel = $('#selDeleteRows');
+    if (selDel)
+      selDel.onclick = () => {
+        if (!state.selected.size) return toast(t('noSelection'), 'warn');
+        const n = state.selected.size;
+        deleteRows(Array.from(state.selected));
+        toast(t('rowsDeleted').replace('{n}', n));
+      };
+    const selDup = $('#selDuplicate');
+    if (selDup) selDup.onclick = () => duplicateRows(Array.from(state.selected));
+
     $('#filterChip').onclick = () => {
       state.rowFilter = null;
       render();
     };
 
     document.addEventListener('keydown', (e) => {
-      if (e.ctrlKey && e.key.toLowerCase() === 'enter') {
+      const mod = e.ctrlKey || e.metaKey;
+      const k = e.key.toLowerCase();
+      if (mod && k === 'enter') {
         e.preventDefault();
         state.data ? (state.view === 'chart' ? renderChartWithSpec() : parsePaste()) : parsePaste();
-      }
-      if (e.key === 'Escape' && state.data) exitWorkspace();
-      if (e.ctrlKey && e.key.toLowerCase() === 'k') {
+      } else if (mod && k === 'z' && !e.shiftKey) {
+        if (state.data) {
+          e.preventDefault();
+          history.undo() ? toast(t('undid')) : toast(t('nothingUndo'), 'warn');
+        }
+      } else if ((mod && k === 'y') || (mod && e.shiftKey && k === 'z')) {
+        if (state.data) {
+          e.preventDefault();
+          history.redo() ? toast(t('redid')) : toast(t('nothingRedo'), 'warn');
+        }
+      } else if (mod && k === 's') {
+        if (state.data) {
+          e.preventDefault();
+          saveProject();
+        }
+      } else if (e.key === 'Escape' && state.data) {
+        const editing = e.target && e.target.classList && e.target.classList.contains('cell-edit');
+        if (!editing) exitWorkspace();
+      } else if (mod && k === 'k') {
         e.preventDefault();
         if (state.data) {
           state.view = 'table';
@@ -1030,6 +1680,8 @@
         }
       }
     });
+
+    loadSessionBanner();
 
     if (location.hash.startsWith('#data=')) {
       try {

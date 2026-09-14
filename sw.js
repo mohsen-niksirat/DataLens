@@ -1,4 +1,4 @@
-const CACHE = 'datalens-v1';
+const CACHE = 'datalens-v2';
 const ASSETS = [
   './',
   './index.html',
@@ -7,6 +7,7 @@ const ASSETS = [
   './js/parsers.js',
   './js/analyzer.js',
   './js/charts.js',
+  './js/store.js',
   './js/app.js',
   './assets/icon-192.png',
   './assets/icon-512.png',
